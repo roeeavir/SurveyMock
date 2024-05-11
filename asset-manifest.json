@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SurveyMock/static/css/main.35409788.css",
-    "main.js": "/SurveyMock/static/js/main.8fc0d107.js",
+    "main.js": "/SurveyMock/static/js/main.56552f9e.js",
     "static/js/453.e0cfb3e1.chunk.js": "/SurveyMock/static/js/453.e0cfb3e1.chunk.js",
     "index.html": "/SurveyMock/index.html",
     "main.35409788.css.map": "/SurveyMock/static/css/main.35409788.css.map",
-    "main.8fc0d107.js.map": "/SurveyMock/static/js/main.8fc0d107.js.map",
+    "main.56552f9e.js.map": "/SurveyMock/static/js/main.56552f9e.js.map",
     "453.e0cfb3e1.chunk.js.map": "/SurveyMock/static/js/453.e0cfb3e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.35409788.css",
-    "static/js/main.8fc0d107.js"
+    "static/js/main.56552f9e.js"
   ]
 }
