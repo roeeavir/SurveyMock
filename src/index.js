@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -11,7 +11,7 @@ import reportWebVitals from "./reportWebVitals";
 import SurveyRoute from "./routes/survey-route/SurveyRoute";
 import App from "./App";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/surveys/:surveyId" element={<SurveyRoute />} />
@@ -21,8 +21,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <SurveyRoute />
-    {/* <RouterProvider router={router} /> */}
+    {/* <SurveyRoute /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
