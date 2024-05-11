@@ -1,0 +1,50 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 6%;
+    background: gray;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.links-list {
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-right: 1px solid white;
+    background: radial-gradient(ellipse at center, white, #316767);
+}
+
+.nav-bar ul li a {
+    border-radius: 8px;
+    padding: 5px;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-bar ul li a.active {
+    font-weight: bold;
+}
+
+.nav-bar ul li a:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+}

@@ -1,0 +1,37 @@
+.range-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grades-container {
+  display: flex;
+  gap: 5px;
+}
+
+.grades-container .question-grade-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.grades-container .question-grade-block:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.grades-container .question-grade-block:active {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.grades-container .question-grade-block.selected {
+  background: greenyellow;
+}
