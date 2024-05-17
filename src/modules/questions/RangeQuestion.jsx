@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./RangeQuestion.css";
+import "./RangeQuestion.scss";
 
 const RangeQuestion = ({ questionText, minValue, maxValue }) => {
   const [selectedGrade, setSelectedGrade] = useState();

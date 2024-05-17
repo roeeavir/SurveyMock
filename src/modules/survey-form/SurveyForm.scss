@@ -1,0 +1,25 @@
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+  padding: 10px;
+
+  .submit-button {
+    padding: 10px 20px;
+    border-radius: 13px;
+    border: 1px solid black;
+    background-color: #d9c64c;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+
+    &.full {
+        background-color: #3bd327;
+    }
+  }
+}

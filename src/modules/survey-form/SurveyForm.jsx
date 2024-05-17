@@ -1,12 +1,14 @@
 import React from "react";
-import RangeQuestion from "../../modules/question/RangeQuestion";
+import "./SurveyForm.scss";
+import RangeQuestion from "../questions/RangeQuestion";
 import { getQuestions } from "../../utils/questionUtils";
 
-const SurveyRoute = ({ questions }) => {
+const SurveyForm = ({ questions }) => {
   questions = getQuestions();
+  const isFormFull = false;
 
   return (
-    <div>
+    <form className="survey-form">
       {questions?.map((question) => (
         <RangeQuestion
           key={question?.questionText}
@@ -15,8 +17,13 @@ const SurveyRoute = ({ questions }) => {
           maxValue={question.maxValue}
         />
       ))}
-    </div>
+      <input
+        className={`submit-button${isFormFull ? " full" : ""}`}
+        type="submit"
+        value="Submit"
+      />
+    </form>
   );
 };
 
-export default SurveyRoute;
+export default SurveyForm;

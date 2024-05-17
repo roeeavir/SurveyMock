@@ -8,20 +8,19 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import SurveyRoute from "./routes/survey-route/SurveyRoute";
 import App from "./App";
+import SurveyForm from "./modules/survey-form/SurveyForm";
 
 const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/surveys/:surveyId" element={<SurveyRoute />} />
+      <Route path="/surveys/:surveyId" element={<SurveyForm />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <SurveyRoute /> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );
