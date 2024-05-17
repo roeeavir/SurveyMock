@@ -5,7 +5,7 @@ const RangeQuestion = ({ questionText, minValue, maxValue }) => {
   const [selectedGrade, setSelectedGrade] = useState();
 
   const arr = Array.from(
-    { length: maxValue - minValue },
+    { length: maxValue - minValue + 1},
     (_, index) => index + minValue
   );
 
