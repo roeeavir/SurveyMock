@@ -8,19 +8,19 @@ const NavBar = () => {
       <nav className="links-list">
         <ul>
           <li>
-            <NavLink to={`/`}>
-              Home
-            </NavLink>
+            <NavLink to={`/`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={`/surveys/developers`}>
-              Developers Survey
-            </NavLink>
+            <NavLink to={`/surveys/developers`}>Developers Survey</NavLink>
           </li>
           <li>
-            <NavLink to={`/surveys/mika-dadosh`}>
-              Mika Dadosh
-            </NavLink>
+            <NavLink to={`/results/developers`}>Developers Results</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/surveys/product_managers`}>Mika Dadosh</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/results/product_managers`}>Mika Dadosh Results</NavLink>
           </li>
         </ul>
       </nav>

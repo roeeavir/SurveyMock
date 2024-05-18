@@ -9,12 +9,22 @@ import {
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import SurveyForm from "./modules/survey-form/SurveyForm";
+import SurveyRoute, { loader as surveyLoader } from "./routes/SurveyRoute";
+import SurveyResults from "./modules/survey-results/SurveyResults";
 
 const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/surveys/:surveyId" element={<SurveyForm />} />
+      <Route
+        path="/surveys/:surveyId"
+        loader={surveyLoader}
+        element={<SurveyRoute />}
+      />
+      <Route
+        path="/results/:surveyId"
+        loader={surveyLoader}
+        element={<SurveyResults />}
+      />
     </Route>
   )
 );

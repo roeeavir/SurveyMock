@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 import "./RangeQuestion.scss";
 
-const RangeQuestion = ({ questionText, minValue, maxValue }) => {
+const RangeQuestion = ({
+  questionText,
+  minValue,
+  maxValue,
+  onChange,
+  questionIndex,
+}) => {
   const [selectedGrade, setSelectedGrade] = useState();
 
+  const handleChange = (value) => {
+    if (selectedGrade === value) {
+      value = null;
+    }
+    setSelectedGrade(value);
+    onChange(value, questionIndex);
+  };
+
   const arr = Array.from(
-    { length: maxValue - minValue + 1},
+    { length: maxValue - minValue + 1 },
     (_, index) => index + minValue
   );
 
@@ -15,7 +29,7 @@ const RangeQuestion = ({ questionText, minValue, maxValue }) => {
       className={`question-grade-block${
         selectedGrade === value ? " selected" : ""
       }`}
-      onMouseUp={() => setSelectedGrade(value)}
+      onClick={() => handleChange(value)}
     >
       {value}
     </button>

@@ -1,0 +1,4 @@
+export const SURVEY_TYPES = {
+  DEVELOPERS: 0,
+  PRODUCT_MANAGERS: 1,
+};
