@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import "./SurveyForm.scss";
 import RangeQuestion from "../questions/RangeQuestion";
 import { updateAnswers } from "../../utils/answers";
+import { useNavigate } from "react-router-dom";
 
 const SurveyForm = ({ questions, surveyType }) => {
   const [answers, setAnswers] = useState({});
+
+  const navigate = useNavigate();
 
   const answerCount = Object.keys(answers)?.length;
   const isFormFull = false;
@@ -25,6 +28,9 @@ const SurveyForm = ({ questions, surveyType }) => {
 
   const onSubmit = () => {
     updateAnswers(surveyType, answers);
+    console.log("Sumbitted survey");
+    alert("הצבעתך נשמרה במערכת");
+    navigate("/");
   };
 
   const submitClassNameExtension = `${isFormFull ? " full" : ""}${

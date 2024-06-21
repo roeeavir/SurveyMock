@@ -9,8 +9,14 @@ import {
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import SurveyRoute, { loader as surveyLoader } from "./routes/SurveyRoute";
-import SurveyResults from "./modules/survey-results/SurveyResults";
+import HomeRoute from "./routes/home/HomeRoute";
+import LoginRoute from "./routes/login/LoginRoute";
+import SurveyRoute, {
+  loader as surveyLoader,
+} from "./routes/surveys/SurveyRoute";
+import SurveyResultsRoute from "./routes/results/SurveyResultsRoute";
+import { getResultsLinks, getSurveysLinks } from "./utils/links";
+import SpecificLinks from "./modules/specific-links/SpecificLinks";
 
 const router = createHashRouter(
   createRoutesFromElements(
@@ -23,8 +29,20 @@ const router = createHashRouter(
       <Route
         path="/results/:surveyId"
         loader={surveyLoader}
-        element={<SurveyResults />}
+        element={<SurveyResultsRoute />}
       />
+      <Route
+        path="/surveys/"
+        loader={surveyLoader}
+        element={<SpecificLinks listOfLinks={getSurveysLinks()} />}
+      />
+      <Route
+        path="/results"
+        loader={surveyLoader}
+        element={<SpecificLinks listOfLinks={getResultsLinks()} />}
+      />
+      <Route path="/login" loader={surveyLoader} element={<LoginRoute />} />
+      <Route path="/" loader={surveyLoader} element={<HomeRoute />} />
     </Route>
   )
 );

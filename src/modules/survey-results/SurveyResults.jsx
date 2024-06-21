@@ -1,24 +1,26 @@
 import React from "react";
 import "./SurveyResults.scss";
-import { useLoaderData } from "react-router-dom";
-import { getAnswers } from "../../utils/answers";
 
-const SurveyResults = () => {
-  const { surveyType } = useLoaderData();
-  const answers = getAnswers(surveyType);
+const SurveyResults = ({ answers }) => {
+  const answersContent = answers?.map((answer, index) => (
+    <tr key={answer?.questionText}>
+    <td>{index + 1}</td>
+    <td>{answer?.questionText}</td>
+    <td>{answer?.value ?? "N/A"}</td>
+    <td>{answer?.count ?? "N/A"}</td>
+  </tr>
+  ));
 
   return (
-    <div className="survey-results">
-      Average survey results:
-      <ul>
-        {answers?.map((answer) => (
-          <li key={answer?.questionText}>
-            {answer?.questionText}{" "}
-            <span style={{ fontWeight: "600" }}>{answer?.value ?? "N/A"}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <table className="survey-results-table">
+      <tr>
+        <th>מספר</th>
+        <th>שאלה</th>
+        <th>ניקוד ממוצע</th>
+        <th>מספר הצבעות</th>
+      </tr>
+      {answersContent}
+    </table>
   );
 };
 
