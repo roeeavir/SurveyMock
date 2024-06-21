@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import NavBar from "./modules/nav-bar/NavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { UserProvider } from "./context/user-context/UserContext";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(localStorage.getItem("user"));
+
+  const navigator = useNavigate();
 
   const login = (userData) => {
     setUser(userData);
+    localStorage.setItem("user", userData);
   };
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("user");
+    navigator("/");
   };
 
   return (
