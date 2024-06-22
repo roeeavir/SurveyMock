@@ -1,4 +1,5 @@
 import React from "react";
+import './SurveyResultsRoute.css';
 import { useLoaderData } from "react-router-dom";
 import { getAnswers } from "../../utils/answers";
 import SurveyResults from "../../modules/survey-results/SurveyResults";
@@ -15,7 +16,11 @@ const SurveyResultsRoute = () => {
     return <NotLoggedNotification />;
   }
 
-  return <SurveyResults answers={answers} />;
+  return (
+    <div className="survey-results-route"> 
+      <SurveyResults answers={answers} />
+    </div>
+  );
 };
 
 export default SurveyResultsRoute;

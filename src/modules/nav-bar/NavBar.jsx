@@ -9,11 +9,11 @@ const NavBar = () => {
   const userContent =
     user != null ? (
       <React.Fragment>
-        <span>{user.userName}</span>
-        <button onClick={logout}>Logout</button>
+        <div>{user.userName}</div>
+        <button onClick={logout}>Log out</button>
       </React.Fragment>
     ) : (
-      <NavLink to={`/login`}>Login</NavLink>
+      <NavLink to={`/login`}>Log in</NavLink>
     );
 
   return (
